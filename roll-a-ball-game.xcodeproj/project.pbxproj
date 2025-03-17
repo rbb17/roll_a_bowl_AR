@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		DDA9FE4F2D87CEEA00889EBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA9FE362D87CEE800889EBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA9FE3D2D87CEE800889EBC;
+			remoteInfo = "roll-a-ball-game";
+		};
+		DDA9FE592D87CEEA00889EBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA9FE362D87CEE800889EBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA9FE3D2D87CEE800889EBC;
+			remoteInfo = "roll-a-ball-game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDA9FE3E2D87CEE800889EBC /* roll-a-ball-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "roll-a-ball-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA9FE4E2D87CEEA00889EBC /* roll-a-ball-gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "roll-a-ball-gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA9FE582D87CEEA00889EBC /* roll-a-ball-gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "roll-a-ball-gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DDA9FE402D87CEE800889EBC /* roll-a-ball-game */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "roll-a-ball-game";
+			sourceTree = "<group>";
+		};
+		DDA9FE512D87CEEA00889EBC /* roll-a-ball-gameTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "roll-a-ball-gameTests";
+			sourceTree = "<group>";
+		};
+		DDA9FE5B2D87CEEA00889EBC /* roll-a-ball-gameUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "roll-a-ball-gameUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA9FE3B2D87CEE800889EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9FE4B2D87CEEA00889EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9FE552D87CEEA00889EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDA9FE352D87CEE800889EBC = {
+			isa = PBXGroup;
+			children = (
+				DDA9FE402D87CEE800889EBC /* roll-a-ball-game */,
+				DDA9FE512D87CEEA00889EBC /* roll-a-ball-gameTests */,
+				DDA9FE5B2D87CEEA00889EBC /* roll-a-ball-gameUITests */,
+				DDA9FE3F2D87CEE800889EBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA9FE3F2D87CEE800889EBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA9FE3E2D87CEE800889EBC /* roll-a-ball-game.app */,
+				DDA9FE4E2D87CEEA00889EBC /* roll-a-ball-gameTests.xctest */,
+				DDA9FE582D87CEEA00889EBC /* roll-a-ball-gameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDA9FE3D2D87CEE800889EBC /* roll-a-ball-game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA9FE622D87CEEA00889EBC /* Build configuration list for PBXNativeTarget "roll-a-ball-game" */;
+			buildPhases = (
+				DDA9FE3A2D87CEE800889EBC /* Sources */,
+				DDA9FE3B2D87CEE800889EBC /* Frameworks */,
+				DDA9FE3C2D87CEE800889EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DDA9FE402D87CEE800889EBC /* roll-a-ball-game */,
+			);
+			name = "roll-a-ball-game";
+			packageProductDependencies = (
+			);
+			productName = "roll-a-ball-game";
+			productReference = DDA9FE3E2D87CEE800889EBC /* roll-a-ball-game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA9FE4D2D87CEEA00889EBC /* roll-a-ball-gameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA9FE652D87CEEA00889EBC /* Build configuration list for PBXNativeTarget "roll-a-ball-gameTests" */;
+			buildPhases = (
+				DDA9FE4A2D87CEEA00889EBC /* Sources */,
+				DDA9FE4B2D87CEEA00889EBC /* Frameworks */,
+				DDA9FE4C2D87CEEA00889EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA9FE502D87CEEA00889EBC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DDA9FE512D87CEEA00889EBC /* roll-a-ball-gameTests */,
+			);
+			name = "roll-a-ball-gameTests";
+			packageProductDependencies = (
+			);
+			productName = "roll-a-ball-gameTests";
+			productReference = DDA9FE4E2D87CEEA00889EBC /* roll-a-ball-gameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDA9FE572D87CEEA00889EBC /* roll-a-ball-gameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA9FE682D87CEEA00889EBC /* Build configuration list for PBXNativeTarget "roll-a-ball-gameUITests" */;
+			buildPhases = (
+				DDA9FE542D87CEEA00889EBC /* Sources */,
+				DDA9FE552D87CEEA00889EBC /* Frameworks */,
+				DDA9FE562D87CEEA00889EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA9FE5A2D87CEEA00889EBC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DDA9FE5B2D87CEEA00889EBC /* roll-a-ball-gameUITests */,
+			);
+			name = "roll-a-ball-gameUITests";
+			packageProductDependencies = (
+			);
+			productName = "roll-a-ball-gameUITests";
+			productReference = DDA9FE582D87CEEA00889EBC /* roll-a-ball-gameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDA9FE362D87CEE800889EBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					DDA9FE3D2D87CEE800889EBC = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					DDA9FE4D2D87CEEA00889EBC = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DDA9FE3D2D87CEE800889EBC;
+					};
+					DDA9FE572D87CEEA00889EBC = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DDA9FE3D2D87CEE800889EBC;
+					};
+				};
+			};
+			buildConfigurationList = DDA9FE392D87CEE800889EBC /* Build configuration list for PBXProject "roll-a-ball-game" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDA9FE352D87CEE800889EBC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DDA9FE3F2D87CEE800889EBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDA9FE3D2D87CEE800889EBC /* roll-a-ball-game */,
+				DDA9FE4D2D87CEEA00889EBC /* roll-a-ball-gameTests */,
+				DDA9FE572D87CEEA00889EBC /* roll-a-ball-gameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDA9FE3C2D87CEE800889EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9FE4C2D87CEEA00889EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9FE562D87CEEA00889EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDA9FE3A2D87CEE800889EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9FE4A2D87CEEA00889EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA9FE542D87CEEA00889EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDA9FE502D87CEEA00889EBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA9FE3D2D87CEE800889EBC /* roll-a-ball-game */;
+			targetProxy = DDA9FE4F2D87CEEA00889EBC /* PBXContainerItemProxy */;
+		};
+		DDA9FE5A2D87CEEA00889EBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA9FE3D2D87CEE800889EBC /* roll-a-ball-game */;
+			targetProxy = DDA9FE592D87CEEA00889EBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DDA9FE602D87CEEA00889EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DDA9FE612D87CEEA00889EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDA9FE632D87CEEA00889EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"roll-a-ball-game/Preview Content\"";
+				DEVELOPMENT_TEAM = PB53AYAXW7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohit.roll-a-ball-game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA9FE642D87CEEA00889EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"roll-a-ball-game/Preview Content\"";
+				DEVELOPMENT_TEAM = PB53AYAXW7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohit.roll-a-ball-game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA9FE662D87CEEA00889EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PB53AYAXW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohit.roll-a-ball-gameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roll-a-ball-game.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/roll-a-ball-game";
+			};
+			name = Debug;
+		};
+		DDA9FE672D87CEEA00889EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PB53AYAXW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohit.roll-a-ball-gameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roll-a-ball-game.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/roll-a-ball-game";
+			};
+			name = Release;
+		};
+		DDA9FE692D87CEEA00889EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PB53AYAXW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohit.roll-a-ball-gameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "roll-a-ball-game";
+			};
+			name = Debug;
+		};
+		DDA9FE6A2D87CEEA00889EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PB53AYAXW7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohit.roll-a-ball-gameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "roll-a-ball-game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDA9FE392D87CEE800889EBC /* Build configuration list for PBXProject "roll-a-ball-game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA9FE602D87CEEA00889EBC /* Debug */,
+				DDA9FE612D87CEEA00889EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA9FE622D87CEEA00889EBC /* Build configuration list for PBXNativeTarget "roll-a-ball-game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA9FE632D87CEEA00889EBC /* Debug */,
+				DDA9FE642D87CEEA00889EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA9FE652D87CEEA00889EBC /* Build configuration list for PBXNativeTarget "roll-a-ball-gameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA9FE662D87CEEA00889EBC /* Debug */,
+				DDA9FE672D87CEEA00889EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA9FE682D87CEEA00889EBC /* Build configuration list for PBXNativeTarget "roll-a-ball-gameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA9FE692D87CEEA00889EBC /* Debug */,
+				DDA9FE6A2D87CEEA00889EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDA9FE362D87CEE800889EBC /* Project object */;
+}
