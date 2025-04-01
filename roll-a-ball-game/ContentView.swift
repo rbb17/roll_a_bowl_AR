@@ -128,7 +128,7 @@ struct ARViewContainer: UIViewRepresentable {
         if let ball = rollABall.findEntity(named: "ball") as? ModelEntity {
             print("BALL FOUND YAYYYYYYYY, initial coordinates: \(ball.transform.translation)")
             // Apply a blue material so it's visually distinct.
-            let ballMaterial = SimpleMaterial(color: .blue, isMetallic: false)
+            let ballMaterial = SimpleMaterial(color: .gray, isMetallic: false)
             ball.model?.materials = [ballMaterial]
             
             ball.components[BallComponent.self] = BallComponent()
@@ -191,13 +191,15 @@ struct ARViewContainer: UIViewRepresentable {
                 )
                 print("Added CollisionComponent to pin \(pin.name) with size: \(size)")
             } else if let childModel = pin.descendants.first(where: { $0 is ModelEntity }) as? ModelEntity {
-                // Otherwise, use the first descendant ModelEntity.
+                // Use the first descendant ModelEntity to generate a collision shape.
                 let bounds = childModel.visualBounds(relativeTo: childModel)
                 let size = bounds.extents
                 pin.components[CollisionComponent.self] = CollisionComponent(
                     shapes: [ShapeResource.generateBox(size: size)]
                 )
                 print("Added CollisionComponent to pin \(pin.name) (via descendant) with size: \(size)")
+                // Set the material to grey so the pin appears grey.
+                childModel.model?.materials = [SimpleMaterial(color: .purple, isMetallic: false)]
             } else {
                 print("Pin \(pin.name) does not contain a ModelEntity for collision shape.")
             }
