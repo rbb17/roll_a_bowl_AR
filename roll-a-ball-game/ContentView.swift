@@ -35,7 +35,7 @@ enum ForceDirection {
 }
 
 struct ContentView : View {
-    
+    @State private var score = 0        // NEW
     @State var showGameOver: Bool = false
     
     private let arView =  ARGameView(frame: .zero)
@@ -44,6 +44,20 @@ struct ContentView : View {
             
             ARViewContainer(arView: arView)
                 .edgesIgnoringSafeArea(.all)
+            // 2) Score overlay (top‑left)
+            VStack {
+                HStack {
+                    Text("Score: \(score)")
+                        .font(.title2).bold()
+                        .padding(8)
+                        .background(.ultraThinMaterial)      // translucent capsule
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding()                                       // keep away from notch
+            
             ControlsView(
                 startApplyingForce: arView.startApplyingForce(direction:),
                 stopApplyingForce: arView.stopApplyingForce
@@ -56,6 +70,10 @@ struct ContentView : View {
                     showGameOver = false
                 }
             )
+        }
+        // ---------- Notifications ----------
+        .onReceive(NotificationCenter.default.publisher(for: PinSystem.pinFellNotification)) { _ in
+            score += 1                                       // bump score per pin
         }
         .onReceive(NotificationCenter.default.publisher(for: PinSystem.gameOverNotification)){ _ in
             showGameOver = true
@@ -165,7 +183,7 @@ struct ARViewContainer: UIViewRepresentable {
             
             // Save the initial up vector
             let initialUp = pin.transform.matrix.columns.1.xyz
-            pin.components[PinComponent.self] = PinComponent(initialUp: initialUp)
+            pin.components[PinComponent.self] = PinComponent(initialUp: initialUp,hasFallen: false)
             
             if pin.components[PhysicsBodyComponent.self] == nil {
                 print("Pin \(pin.name) missing physics body, adding one...")
@@ -222,57 +240,11 @@ struct BallComponent: Component {
     var direction: ForceDirection?
 }
 
-//class PinSystem: System {
-//    static let gameOverNotification = Notification.Name("GameOver")
-//    // Optionally, store a reference to the ARGameView if possible.
-//    weak var gameView: ARGameView?
-//    
-//    required init(scene: RealityKit.Scene){}
-////    func update(context: SceneUpdateContext) {
-////        let pins = context.scene.performQuery(PinComponent.query)
-////        
-////        if checkGameOver(pins: pins){
-////            NotificationCenter.default.post(name:PinSystem.gameOverNotification, object: nil)
-////        }
-////        
-////    }
-//    
-//    func update(context: SceneUpdateContext) {
-//            // Guard that level loading is finished.
-//            guard let gameView = gameView, gameView.isLevelLoaded else { return }
-//        
-////            print("--------- Inside update after gameView guard")
-//            let pins = context.scene.performQuery(PinComponent.query)
-//            
-//            
-//            if checkGameOver(pins: pins) {
-//                NotificationCenter.default.post(name: PinSystem.gameOverNotification, object: nil)
-//            }
-//    }
-//    
-//    private func checkGameOver(pins: QueryResult<Entity>) -> Bool {
-//    
-//        let upVector = SIMD3<Float>(0, 1, 0)
-//        for pin in pins {
-//            let pinUpVector = pin.transform.matrix.columns.1.xyz
-//            let dotProduct = dot(pinUpVector, upVector)
-//            if  dotProduct > 0.9 {
-//                print("Dot Product is \(dotProduct)")
-//                // At least one pin is still upright.
-//                return false
-//            }
-//        }
-//        
-//        // All pins have fallen over.
-//        return true
-//    }
-//
-//
-//}
-
 
 class PinSystem: System {
+    static let pinFellNotification  = Notification.Name("PinFell")
     static let gameOverNotification = Notification.Name("GameOver")
+    private let threshold: Float = 0.9
     
     required init(scene: RealityKit.Scene) { }
     
@@ -287,29 +259,51 @@ class PinSystem: System {
         }
     }
     
+//    private func checkGameOver(pins: QueryResult<Entity>) -> Bool {
+//            // Define a threshold. Here, 0.9 means that a pin rotating more than 90 degrees is considered fallen.
+//            
+//            for pin in pins {
+//                if let pinComp = pin.components[PinComponent.self] as? PinComponent {
+//                    // Get the current up vector of the pin.
+//                    let currentUp = pin.transform.matrix.columns.1.xyz
+//                    // Normalize both vectors (ensure a fair dot product comparison)
+//                    let normalizedCurrent = normalize(currentUp)
+//                    let normalizedInitial = normalize(pinComp.initialUp)
+//                    
+//                    let dotProduct = dot(normalizedCurrent, normalizedInitial)
+//                    print("Pin \(pin.name) dot product: \(dotProduct)")
+//                    if dotProduct >= threshold {
+//                        // This pin is still close to its initial up orientation—i.e., still "upright"
+//                        return false
+//                    }
+//                }
+//            }
+//            // If we reached here, all pins have rotated (fallen)
+//            print("All pins have fallen over!")
+//            return true
+//        }
     private func checkGameOver(pins: QueryResult<Entity>) -> Bool {
-            // Define a threshold. Here, 0.9 means that a pin rotating more than 90 degrees is considered fallen.
-            let threshold: Float = 0.9
-            
+            var allDown = true                // NEW – we’ll decide after the loop
+
             for pin in pins {
-                if let pinComp = pin.components[PinComponent.self] as? PinComponent {
-                    // Get the current up vector of the pin.
-                    let currentUp = pin.transform.matrix.columns.1.xyz
-                    // Normalize both vectors (ensure a fair dot product comparison)
-                    let normalizedCurrent = normalize(currentUp)
-                    let normalizedInitial = normalize(pinComp.initialUp)
-                    
-                    let dotProduct = dot(normalizedCurrent, normalizedInitial)
-                    print("Pin \(pin.name) dot product: \(dotProduct)")
-                    if dotProduct >= threshold {
-                        // This pin is still close to its initial up orientation—i.e., still "upright"
-                        return false
-                    }
+                guard var pinComp = pin.components[PinComponent.self] as? PinComponent else { continue }
+
+                let currentUp        = normalize(pin.transform.matrix.columns.1.xyz)
+                let normalizedInitial = normalize(pinComp.initialUp)
+                let dotProduct       = dot(currentUp, normalizedInitial)
+
+                // ──➤  Detect first‑time fall
+                if dotProduct < threshold && !pinComp.hasFallen {
+                    pinComp.hasFallen = true                 // mark counted
+                    pin.components[PinComponent.self] = pinComp
+                    NotificationCenter.default.post(name: PinSystem.pinFellNotification,
+                                                    object: nil)
                 }
+
+                // if any pin is still upright, game isn’t over
+                if dotProduct >= threshold { allDown = false }
             }
-            // If we reached here, all pins have rotated (fallen)
-            print("All pins have fallen over!")
-            return true
+            return allDown          // allDown ⇒ every pin tipped
         }
 }
 
@@ -317,6 +311,7 @@ class PinSystem: System {
 struct PinComponent: Component {
     static let query = EntityQuery(where: .has(PinComponent.self))
     var initialUp: SIMD3<Float>
+    var hasFallen: Bool = false
 }
 
 class ARGameView: ARView {
