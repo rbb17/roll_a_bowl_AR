@@ -1,0 +1,46 @@
+flowchart TB
+    %% ---------- STYLE CLASSES ----------
+    classDef ent  fill:#D1FAE5,stroke:#059669,color:#065F46;
+    classDef comp fill:#FEF3C7,stroke:#D97706,color:#78350F;
+    classDef sys  fill:#DBEAFE,stroke:#2563EB,color:#1E3A8A;
+
+    %% ---------- LAYER 1 — ENTITIES ----------
+    subgraph L1["ENTITIES"]
+        BallE[Ball]:::ent
+        PinsE[Pins (×6)]:::ent
+        StaticE[Static<br/>Colliders]:::ent
+    end
+
+    %% ---------- LAYER 2 — COMPONENTS ----------
+    subgraph L2["COMPONENTS"]
+        BallC[BallComponent<br/>(driveDir)]:::comp
+        PinC[PinComponent<br/>(initUp, fallen)]:::comp
+        PhysC[Physics / Collision<br/>components]:::comp
+    end
+
+    %% ---------- LAYER 3 — SYSTEMS ----------
+    subgraph L3["SYSTEMS  (per‑frame)"]
+        BallSys["BallPhysicsSystem"]:::sys
+        PinSys ["PinSystem"]:::sys
+        Render ["RealityKit Renderer"]:::sys
+    end
+
+    %% ---------- RELATIONSHIPS ----------
+    %% Entities → Components
+    BallE  --> BallC
+    BallE  --> PhysC
+    PinsE  --> PinC
+    PinsE  --> PhysC
+    StaticE--> PhysC
+
+    %% Components → Systems
+    BallC  --> BallSys
+    PhysC  --> BallSys
+    PinC   --> PinSys
+
+    %% Systems → Entities (writes)
+    BallSys -->|impulse| BallE
+    PinSys  -->|fallen flag| PinsE
+
+    %% Render step
+    BallE & PinsE & StaticE --> Render
