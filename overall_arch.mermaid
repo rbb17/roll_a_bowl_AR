@@ -1,0 +1,51 @@
+flowchart TB
+    %% ---------- SHARED STYLES ----------
+    classDef ui     fill:#E8F6FF,stroke:#3B82F6,color:#111;
+    classDef game   fill:#FFF7E8,stroke:#F59E0B,color:#111;
+    classDef scene  fill:#E8FCE8,stroke:#22C55E,color:#111;
+    classDef ar     fill:#F5E8FF,stroke:#A855F7,color:#111;
+    classDef hw     fill:#F3F4F6,stroke:#6B7280,color:#111;
+
+    %% ---------- LAYERS ----------
+    subgraph UI["Presentation Layer"]
+        HUD["HUD<br/>(score · timer · modal)"]:::ui
+        DPad["D‑pad<br/>(DragGesture)"]:::ui
+    end
+
+    subgraph GAME["Game‑Logic Layer"]
+        ECSLoop[[RealityKit<br/>ECS Loop]]:::game
+        BallSys["BallPhysicsSystem"]:::game
+        PinSys["PinSystem"]:::game
+    end
+
+    subgraph SCENE["Scene & Physics Layer"]
+        RKitScene[[RealityKit Scene]]:::scene
+        BallEnt["Ball Entity"]:::scene
+        PinEnts["6 × Pin Entities"]:::scene
+        StaticEnts["WallBox / MeshBox<br/>static Entities"]:::scene
+    end
+
+    subgraph AR["AR Perception Layer"]
+        ARSession[[ARKit Session]]:::ar
+        Planes["ARPlaneAnchor<br/>(vertical)"]:::ar
+        Meshes["ARMeshAnchor<br/>(LiDAR)"]:::ar
+    end
+
+    subgraph HW["Device Sensors"]
+        Sensors["RGB Camera ＋ LiDAR"]:::hw
+    end
+
+    %% ---------- DATA FLOW ----------
+    Sensors --> ARSession
+    ARSession -->|anchors| Planes
+    ARSession -->|anchors| Meshes
+    Planes & Meshes -->|collider boxes| StaticEnts
+    StaticEnts & BallEnt & PinEnts --> RKitScene
+    ECSLoop --> BallSys
+    ECSLoop --> PinSys
+    BallSys -->|impulses| BallEnt
+    PinSys  -->|state update| PinEnts
+    DPad -->|direction| BallSys
+    HUD  <-->|score & time| PinSys
+    RKitScene -- 3‑D render --> HUD
+    HUD -- pinch‑to‑scale --> RKitScene
